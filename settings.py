@@ -6,5 +6,5 @@ GREEN_COLOR = "green"
 RED_COLOR = "red"
 SIZE_TEXT = 15
 FONT = "Arial"
-TRUE_BUTTON_IMAGE = "images/true.png"
-FALSE_BUTTON_IMAGE = "images/false.png"
+TRUE_BUTTON_IMAGE = "true.png"
+FALSE_BUTTON_IMAGE = "false.png"
