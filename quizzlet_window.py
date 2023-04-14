@@ -25,25 +25,39 @@ class QuizzWindow(Tk, Questions):
 
         # score
         self.score = 0
-        self.score_label = Label(text=f"Score: {self.score}", background=BACKGROUND_COLOR,
-                                 fg=FG_COLOR, font=(FONT, SIZE_TEXT, "normal"), padx=40, pady=40)
+        self.score_label = Label(text=f"Score: {self.score}", 
+                                 background=BACKGROUND_COLOR,
+                                 fg=FG_COLOR, 
+                                 font=(FONT, SIZE_TEXT, "normal"), 
+                                 padx=40, 
+                                 pady=40)
         self.score_label.grid(row=0, column=1)
 
         # rectangle card
         self.canvas = Canvas(width=350, height=300, bg="white")
         self.canvas.grid(row=1, column=0, columnspan=2)
-        self.text = self.canvas.create_text(160, 150, text=f"{self.question}", width=250, font=(FONT, 25, "italic"),
+        self.text = self.canvas.create_text(160,
+                                            150,
+                                            text=f"{self.question}",
+                                            width=250, 
+                                            font=(FONT, 25, "italic"),
                                             fill=BACKGROUND_COLOR)
 
         # right button & wrong button
         self.right_image_button = PhotoImage(file=TRUE_BUTTON_IMAGE)
         self.wrong_image_button = PhotoImage(file=FALSE_BUTTON_IMAGE)
-        self.right_button = Button(image=self.right_image_button, background=BACKGROUND_COLOR, highlightthickness=0,
-                                   highlightbackground=BACKGROUND_COLOR, command=self.right_button_pressed)
+        self.right_button = Button(image=self.right_image_button,
+                                   background=BACKGROUND_COLOR, 
+                                   highlightthickness=0,
+                                   highlightbackground=BACKGROUND_COLOR, 
+                                   command=self.right_button_pressed)
         self.right_button.grid(row=2, column=0, pady=40, padx=40)
 
-        self.wrong_button = Button(image=self.wrong_image_button, background=BACKGROUND_COLOR, highlightthickness=0,
-                                   highlightbackground=BACKGROUND_COLOR, command=self.wrong_button_pressed)
+        self.wrong_button = Button(image=self.wrong_image_button,
+                                   background=BACKGROUND_COLOR,
+                                   highlightthickness=0,
+                                   highlightbackground=BACKGROUND_COLOR,
+                                   command=self.wrong_button_pressed)
         self.wrong_button.grid(row=2, column=1, pady=40, padx=40)
         self.mainloop()
 
